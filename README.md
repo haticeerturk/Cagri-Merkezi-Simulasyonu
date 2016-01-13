@@ -1,1 +1,16 @@
-# Cagri-Merkezi-Simulasyonu
+Çağrı Merkezi Simülasyonu<br/>
+
+Müşterilerine 3 adet müşteri temsilcisi ile hizmet veren bir çağrı merkezi simülasyon programı yazılacaktır. Müşteriler 0 ile 5 dakika aralığında rasgele olarak belirlenen aralıklarda gelmekte ve hizmet almak istemektedirler. Müşteriler çağrı merkezini aradıklarında, ilk giren ilk çıkar (FIFO) mantığına göre işleyen ve kapasitesi 100 olan bir bekleme kuyruğuna yerleştirilmektedirler. Bir müşteri kuyruğun en önüne geldiğinde, en az 1 tane boş müşteri temsilcisi varsa boş temsilcilerden birisi tarafından hizmet verilmektedir, hiç boş müşteri temsilcisi yoksa bir tanesinin boşalmasını beklemekte ve boşalan temsilci tarafından hizmet verilmektedir. Bir temsilci boşaldığında, hemen sonraki müşteriye hizmet vermeye başlamakta ve bir müşterinin kuyruğun önünden herhangi bir temsilciye gitmesi hiç zaman almamaktadır. Herhangi bir temsilcinin herhangi bir müşteriye verdiği hizmet 3 ile 10 dakika aralığında rasgele olarak belirlenen bir süre kadar sürmektedir. Bir müşteriye verilen hizmet bittiğinde, müşteri hemen gitmekte ve müşteri temsilcisi boş olmaktadır.<br/> 
+Müşteriler, 1’den başlayarak çağrı merkezine geliş sıralarını gösteren sayılar kullanılarak isimlendirilmektedir (Müşteri-1, Müşteri-2 v.b. gibi). Aynı anda (aynı dakika içerisinde) birden fazla müşteri gelmesi durumunda, öncelikle sıra numarası küçük olan müşteri kuyruğa yerleştirilmektedir. Müşteri Temsilcileri de aynı şekilde 1’den başlayarak sıra numaraları ile isimlendirilmektedir (Temsilci-1, Temsilci-2 ve Temsilci-3). Bir müşterinin hizmet alma sırası geldiğinde birden fazla gişe boşsa, müşteri sıra numarası küçük olan gişeye gitmektedir.<br/>
+Kullanıcı, rasgele sayı üretimi için başlangıç/çekirdek değerini (srand(...)) ve toplam simülasyon süresini (dakika) girmeli ve srand() fonksiyonu, verilen argüman (çekirdek) ile programın başında 1 kez çalıştırılmalıdır. Bir müşteri kuyruğa eklendikten hemen sonra, bir sonraki müşterinin ne kadar süre sonra geleceği rasgele (0-5 dakika) belirlenmelidir. Benzer şekilde, bir müşteri boş bir temsilciye gitmeden hemen önce, hizmet süresi rasgele (3-10 dakika) belirlenmelidir. Belirli bir dakika içerisinde hem çağrı merkezine gelen müşterileri kuyruğa ekleme hem de hizmet sırası gelen müşterileri kuyruktan alıp boş temsilcilere gönderme işlemlerinin yapılması gerekiyorsa, kuyruğa müşteri ekleme işlemi önce yapılmalıdır.<br/>
+Simülasyon süresince çağrı merkezinde meydana gelecek aşağıda belirtilen olaylar zaman sırasına göre ekrana yazdırılmalıdır:
+ bir müşterinin çağrı merkezine ne zaman geldiği<br/>
+ ne zaman ve hangi müşteri temsilcisinde hizmet verilmeye başlandığı<br/>
+ ne zaman ve hangi müşteri temsilcisini terk ettiği<br/>
+Simülasyon süresi bittiğinde, herhangi bir temsilcide hizmet almaya devam eden veya kuyrukta bekleyen müşteriler varsa onlara da hizmet verildikten sonra, aşağıda belirtilen istatistiksel sonuçlar görüntülenmelidir:<br/>
+ herhangi bir zamanda kuyrukta bulunan en fazla müşteri sayısı<br/>
+ kuyrukta en uzun süre bekleyen müşterinin bekleme süresi<br/>
+ bir müşterinin kuyrukta ortalama bekleme süresi<br/>
+ her müşteri temsilcisi için:<br/>
+     hizmet verdiği toplam müşteri sayısı<br/>
+     bir müşteriye ortalama hizmet verme süresi<br/>
